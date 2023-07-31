@@ -1,21 +1,23 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { url } from "../../shared/constants";
-import "./style.scss";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { DetailedInfoI } from '../../helper/interfaces';
+import { url } from '../../shared/constants';
+import './style.scss';
 
 const DetailedInfo = () => {
-  const id = useParams();
-  const [book, setBook] = useState({
-    title: "",
-    author: "",
-    pictire: "",
-    description: "",
-    year: "",
+  const id = useParams<string>().id;
+  const [book, setBook] = useState<DetailedInfoI>({
+    title: '',
+    author: '',
+    pictures: [''],
+    description: '',
+    year: 0
   });
+
   const fetcher = async () => {
-    const book = await axios.get(`${url}/${id.id}`);
-    setBook(book.data);
+    const respons = await axios.get(`${url}/details/${id}`);
+    setBook(respons.data);
   };
 
   useEffect(() => {
@@ -27,7 +29,9 @@ const DetailedInfo = () => {
       <h2 className='detail_headText'>Детальная инвормация о книге</h2>
       <div className='detail_wrapper'>
         <div className='detail_field pic'>
-          <img src={`../${book.pictire}`} alt='' />
+          {book.pictures?.map((pic) => (
+            <img src={`${url}/pictures/${pic}`} alt='' />
+          ))}
         </div>
         <div className='detail_field'>
           <b>Название:</b>
