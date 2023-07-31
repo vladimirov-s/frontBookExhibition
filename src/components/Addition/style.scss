@@ -1,0 +1,109 @@
+input,
+textarea {
+  border: 0;
+}
+
+.addBook {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 4fr 4fr;
+  min-width: 500px;
+
+  >input {
+    min-height: 30px;
+  }
+
+  &_Label>span,
+  &_Labelpic>span {
+    width: 80px;
+  }
+
+  &_Label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    textarea {
+      min-width: 300px;
+      resize: horizontal;
+    }
+
+    input,
+    textarea,
+    >div {
+      padding: 2px 10px 2px 4px;
+      min-height: 30px;
+      width: 80%;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      border: 5px dashed rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        cursor: pointer;
+        background-color: #444;
+        border-color: rgb(0, 0, 0);
+      }
+    }
+  }
+
+
+  &_button {
+    grid-column: 1 / 3;
+    font-size: 20px;
+    border: 0;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: box-shadow .15s;
+    background-color: rgb(59, 109, 104);
+
+    &:hover {
+      box-shadow: inset 0 0 20px 1px rgb(235, 223, 223);
+    }
+  }
+
+  &_Labelpic {
+    grid-column: 1 / 3;
+    display: flex;
+    align-items: center;
+
+    >div {
+      box-shadow: 0 0 2px black;
+      width: 100%;
+
+      border: {
+        width: 6px;
+        color: rgb(132, 255, 0);
+        style: dashed;
+      }
+
+      ul li {
+        text-align: start
+      }
+    }
+  }
+}
+
+@media (min-width: 901px) {
+  .addBook_Label {
+    justify-content: flex-start;
+  }
+
+  .addBook_Label:nth-child(even) {
+    grid-column: 2 / 3;
+  }
+
+  .addBook_Label:nth-child(odd) {
+    grid-column: 1 / 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .addBook_Label {
+    grid-column: 1 / 3;
+  }
+}

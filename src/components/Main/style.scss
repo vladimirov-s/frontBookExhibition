@@ -1,0 +1,53 @@
+.main_table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.main_wrap {
+  display: grid;
+  grid-template-rows: 30px 6fr;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px white;
+
+  img {
+    margin: 0 auto;
+    width: auto;
+    height: 100px;
+  }
+}
+
+.book_field {
+  margin-bottom: 10px;
+  flex: 100%;
+  height: max-content;
+  text-overflow: ellipsis;
+}
+
+.delIcon {
+  border-radius: 5px;
+
+  svg {
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    &:hover {
+      box-shadow: 0 0 7px 2px rgb(241, 150, 150);
+    }
+  }
+}
+
+.book {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-height: 340px;
+  overflow: hidden;
+}
+
+svg {
+  width: 30px;
+  height: 30px;
+  fill: white
+}

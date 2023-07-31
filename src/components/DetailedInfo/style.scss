@@ -1,0 +1,25 @@
+.detail_wrapper {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.detail_field {
+  grid-column: 2 / 4;
+  text-align: start;
+  padding: 5px;
+
+  b {
+    color: rgb(216, 219, 179);
+    font-size: 20px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.pic {
+  grid-column: 1;
+  grid-row: 1 / 6;
+}

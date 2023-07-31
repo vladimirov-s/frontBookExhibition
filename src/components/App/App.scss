@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+  width: 85vw;
+  margin: 0 auto;
+  background-color: #333;
+  padding: 25px;
+  min-width: 400px;
+  min-height: 90vh;
+  position: relative;
+}
+
+.toMain {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.podlozhka {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333333ef;
+}
